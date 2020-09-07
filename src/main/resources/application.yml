@@ -1,0 +1,29 @@
+logging:
+  level:
+    org:
+      #   for debug purpose set to DEBUG and binder TRACE, otherwise INFO
+      hibernate:
+        SQL: info
+        type:
+          descriptor:
+            sql:
+              BasicBinder: info
+    ROOT: info
+
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    #    url: jdbc:sqlserver://10.70.152.54:1433;databaseName=gb_api
+    url: jdbc:sqlserver://deleted-in-public-github.rds.amazonaws.com:1433;databaseName=registration
+    username: admin
+    #    password mocked in github public repo
+    password: deletedInPublicGithub
+  #    for init project only when schema.sql is available
+  #    initialization-mode: always
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    #   for debug purpose set to true
+    show-sql: false
