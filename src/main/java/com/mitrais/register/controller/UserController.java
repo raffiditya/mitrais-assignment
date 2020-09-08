@@ -18,8 +18,8 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/isValidEmail/{:email}")
-    public ResponseEntity<?> isValidEmail(@PathVariable String email) {
+    @GetMapping("/isValidEmail")
+    public ResponseEntity<?> isValidEmail(@RequestParam String email) {
         if (userService.isEmailExists(email)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email already taken.");
         }
@@ -27,8 +27,8 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/isValidMobileNumber/{:mobileNumber}")
-    public ResponseEntity<?> isValidMobileNumber(@PathVariable String mobileNumber) {
+    @GetMapping("/isValidMobileNumber")
+    public ResponseEntity<?> isValidMobileNumber(@RequestParam String mobileNumber) {
         if (userService.isMobileNumberExists(mobileNumber)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Mobile number already taken.");
         }

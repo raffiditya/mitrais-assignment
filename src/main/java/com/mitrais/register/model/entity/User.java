@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
-@Table(name = "user", schema = "dbo")
+@Table(name = "user_registration", schema = "dbo")
 public class User {
 
     @Id
