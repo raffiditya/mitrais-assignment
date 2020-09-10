@@ -14,19 +14,20 @@ spring:
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     #    url: jdbc:sqlserver://10.70.152.54:1433;databaseName=gb_api
-    url: jdbc:sqlserver://deletedForGithubRepo.rds.amazonaws.com:1433;databaseName=registration
+    url: jdbc:sqlserver://deleted-in-public-github-repo.rds.amazonaws.com:1433;databaseName=registration
     username: admin
     #    password mocked in github public repo
-    password: deletedForGithubRepo
+    password: deletedInPublicGithubRepo
   #    for init project only when schema.sql is available
   #    initialization-mode: always
   jpa:
     hibernate:
-      ddl-auto: none
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
     #   for debug purpose set to true
     show-sql: false
+
+
 
 # --- server if jar
 server:
